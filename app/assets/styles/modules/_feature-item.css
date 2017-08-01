@@ -10,6 +10,7 @@
 	&__icon {
 		display: block;
 		margin: 0 auto;
+		width: 4rem;
 
 		@mixin atSmall {
 			position: absolute;
