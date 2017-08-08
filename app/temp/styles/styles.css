@@ -1132,8 +1132,13 @@ Instead edit gulp/template/sprite */
 @media (min-width: 600px) {
 
 .site-header {
+		position: fixed;
 		background-color: rgba(47,85,114, .3)
-}
+}	
+
+		.site-header--dark {
+			background-color: rgba(23, 51, 72, .85);	
+		}
 	}
 
 @media (min-width: 600px) {
@@ -1149,6 +1154,10 @@ Instead edit gulp/template/sprite */
 		left: 50%;
 		-webkit-transform: translateX(-50%) scale(.8);
 		        transform: translateX(-50%) scale(.8);
+		-webkit-transition: -webkit-transform .3s ease-out;
+		transition: -webkit-transform .3s ease-out;
+		transition: transform .3s ease-out;
+		transition: transform .3s ease-out, -webkit-transform .3s ease-out;
 		-webkit-transform-origin: 50% 0;
 		        transform-origin: 50% 0;
 		background-color: #2F5572;
@@ -1162,6 +1171,11 @@ Instead edit gulp/template/sprite */
 			-webkit-transform: translateX(0);
 			        transform: translateX(0)
 	}
+
+			.site-header--dark .site-header__logo {
+				-webkit-transform: scale(.52);
+				        transform: scale(.52);
+			}
 	}
 
 .site-header__logo__graphic {
@@ -1350,14 +1364,22 @@ Instead edit gulp/template/sprite */
 			font-size: 1rem;
 			background-color: transparent
 	}
+
+			.primary-nav a.is-current-link {
+				color: #fabb69;
+			}
 	}
 
 .reveal-item {
 	opacity: 0;
 	-webkit-transition: opacity 1.5s ease-out;
 	transition: opacity 1.5s ease-out;
+	-webkit-transform: scale(1.15);
+	        transform: scale(1.15);
 }
 
 .reveal-item--is-visible {
 		opacity: 1;
+		-webkit-transform: scale(1);
+		        transform: scale(1);
 	}
